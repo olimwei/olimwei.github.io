@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Git 常用基本命令详解</title>
+  <meta name="description" content="从网站上收集一些基本常用的git命令，作为参考。在加上一些用用链接，作为学习的资料。以便在有些网络资源链接失效后，至少我这里还有个可以检索的备份。">
+  <meta name="author" content="archiwei">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Git 常用基本命令详解">
+  <meta name="twitter:description" content="从网站上收集一些基本常用的git命令，作为参考。在加上一些用用链接，作为学习的资料。以便在有些网络资源链接失效后，至少我这里还有个可以检索的备份。">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Git 常用基本命令详解">
+  <meta property="og:description" content="从网站上收集一些基本常用的git命令，作为参考。在加上一些用用链接，作为学习的资料。以便在有些网络资源链接失效后，至少我这里还有个可以检索的备份。">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://mkzg.com/2016/11/git-basic/">
+  <link rel="alternate" type="application/rss+xml" title="olim" href="http://mkzg.com/feed.xml">
+
+  <meta name="google-site-verification" content="" />
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 olim 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="olim logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for olim" class="blog-button">olim</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">有之为利 无之为用</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">olim (欧林木)，来自中国，现居温哥华，从事和房屋建筑设计与建造的相关工作。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description"><p><a href="http://liangdesign.com" target="_blank">聊以为生</a></p><p><a href="http://cn.archiz.com" target="_blank">赖以为生</a></p></p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="olim 欧林木平时写的一些东西" class="blog-button">随笔</a></li>
+                
+                  <li class="navigation__item"><a href="http://liangphoto.com" target="_blank" title="olim平时拍的一些东西">摄影</a></li>
+                
+                  <li class="navigation__item"><a href="http://project.mkzg.com" target="_blank" title="olim做过的一些东西">工程</a></li>
+                
+                  <li class="navigation__item"><a href="/contact/" target="_blank" title="olim的一些联系方式">联络</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/olimw" title="@olimw 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- facebook -->
+  <li class="navigation__item">
+    <a href="http://facebook.com/archiwei" title="@archiwei" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">facebook</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/archwei" title="@archwei" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Google Plus -->
+  <li class="navigation__item">
+    <a href="https://plus.google.com/107716023262945317060" rel="author" title="Google+" target="_blank">
+      <i class='social fa fa-google-plus-square'></i>
+      <span class="label">Google Plus</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:archiwei@gmail.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-11-23 00:00:00 -0800" itemprop="datePublished" class="post-meta__date date">2016-11-23</time> &#8226; <span class="post-meta__tags tags"></span>
+    </div>
+    <h1 class="post-title">Git 常用基本命令详解</h1>
+  </header>
+
+  <section class="post">
+    <p>从网站上收集一些基本常用的git命令，作为参考。在加上一些用用链接，作为学习的资料。以便在有些网络资源链接失效后，至少我这里还有个可以检索的备份。</p>
+
+<h2 id="section">配置</h2>
+<ul>
+  <li>命令：
+<code>git config</code>，参数–global表示你这台机器上所有的Git仓库都会使用这个配置
+    <ol>
+      <li>git config –global user.name “Your Name”</li>
+      <li>git config –global user.email “email@example.com”</li>
+      <li>git config –global alias.co checkout #设置别名，如checkout别名为co</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="section-1">版本库</h3>
+<ul>
+  <li>初始化：
+<code>git init</code>，分布式版本控制系统中每个人的电脑就是一个完整的版本库，初始化后，就意味着这个目录变成Git可以管理的仓库了</li>
+  <li>远程仓库：如果你需要和其他人交换你的修改，最好需要一个远程仓库（以GitHub为例）
+    <ul>
+      <li>创建SSH Key：<code>ssh-keygen -t rsa -C "youremail@example.com"</code>
+        <blockquote>
+          <p>操作：一路回车，会在用户主目录生成.ssh目录，其中id_rsa是私钥，不能泄露，id_rsa.pub是公钥，可以对外使用，打开Account settings，SSH Keys页面，然后，点Add SSH Key，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容，点Add Key
+说明：你的本地仓库需要一个给远程仓库辨识的标志，id_rsa.pub就是这样一个唯一标识，当你提交时，GitHub便知道了这是谁的提交</p>
+        </blockquote>
+      </li>
+      <li>添加远程仓库：<code>git remote add origin git@github.com:daihanqiao/daihanqiao.github.io.git</code>
+        <blockquote>
+          <p>说明：如果你先在本地有了一个仓库，你要同步本地仓库和GitHub上的远程仓库，除了需要将你本地仓库的标识告诉远程仓库，还需要在本地仓库添加远程仓库的SSH URL（注意将origin后的路径设置成你GitHub上的仓库SSH URL）</p>
+        </blockquote>
+      </li>
+      <li>从远程仓库克隆：<code>git clone git@github.com:daihanqiao/daihanqiao.github.io.git</code>
+        <blockquote>
+          <p>说明：如果已有一个远程仓库，你可以将远程仓库内容拷贝到本地仓库</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-2">状态查看</h3>
+<ul>
+  <li>查看提交日志：<code>git log</code>，可添加<code>--pretty=oneline</code>参数，只显示版本号和提交信息</li>
+  <li>查看命令历史：<code>git reflog</code>，会显示操作命令及对应的版本号</li>
+  <li>仓库当前的状态：<code>git status</code></li>
+  <li>查看分支：<code>git branch</code></li>
+  <li>查看分支合并图：<code>git log --graph</code></li>
+  <li>查看“储藏”的工作现场：<code>git stash list</code></li>
+  <li>查看远程仓库名称：<code>git remote</code></li>
+  <li>查看远程仓库信息：<code>git remote -v</code>(抓取和推送地址)</li>
+  <li>查看标签信息：<code>git show </code></li>
+</ul>
+
+<h3 id="section-3">文件比较</h3>
+<ul>
+  <li>工作区和缓存区比较：<code>git diff (&lt;path&gt;)</code>，不传path则比较所有文件</li>
+  <li>缓存区和版本库比较：<code>git diff --cached (&lt;path&gt;)</code>,<code>git diff --staged (&lt;path&gt;)</code></li>
+  <li>工作区和版本库比较：<code>git diff HEAD,git diff HEAD^</code>,<code>git diff commit_id</code>(HEAD为当前版本，HEAD^为上一版本，HEAD^^上上一个版本，HEAD~100上100个版本，commit_id为版本号，以下命令不做特殊说明，commit_id均可用HEAD,HEAD^,HEAD~n代替)</li>
+  <li>版本库中两个不同版本的比较：<code>git diff commit_id1 commit_id2</code></li>
+</ul>
+
+<h3 id="section-4">文件提交</h3>
+
+<ul>
+  <li>工作区提交到缓存区： <code>git add &lt;path&gt;</code>，可以是文件也可以是目录，<code>git add .</code>表示add当前目录</li>
+  <li>缓存区提交到版本库：<code>git commit -m "commit msg"</code></li>
+  <li>版本库推送到远程库：<code>git push -u origin master</code>，第一次push加上-u参数，将本地master分支内容推送到远程库新的master分支，并将二者关联，以后的推送可以简化为git push</li>
+</ul>
+
+<h3 id="section-5">文件抓取</h3>
+
+<p><code>git pull</code></p>
+
+<h3 id="section-6">文件修改</h3>
+
+<ul>
+  <li>撤销缓存区的修改：<code>git reset HEAD file</code></li>
+  <li>工作区回退到某一版本：<code>git reset --hard commit_id</code></li>
+  <li>撤销工作区修改（未提交至缓存区）：<code>git checkout -- file</code></li>
+  <li>撤销工作区修改（已提交至缓存区）：<code>git reset HEAD file+git checkout -- file</code></li>
+  <li>文件从版本库删除：<code>git rm file|git add file+git commit -m "commit msg"</code></li>
+  <li>版本库误删的文件恢复到最新版本：<code>git checkout -- file</code></li>
+</ul>
+
+<h3 id="section-7">分支管理</h3>
+
+<ul>
+  <li>应用场景：开发某个功能模块，或测试定位修复某个BUG时，可以在自己的分支上开发，正常提交至版本库而不影响大家都在使用的分支，开发完成后合并到开发分支</li>
+  <li>创建并切换分支：<code>git checkout -b dev</code>(相当于<code>git branch dev+git checkout dev</code>)</li>
+  <li>合并分支：<code>git merge dev</code>，合并dev分支到当前分支</li>
+  <li>删除分支：<code>git branch -d dev</code></li>
+  <li>两个分支都修改了同一文件，合并时会发生冲突，需要手动解决冲突后再提交</li>
+  <li>“储藏”工作现场：<code>git stash</code>，当正在dev分支修改文件时，需要紧急修复某个bug，可以“储藏”当前开发进度，使用后<code>git status</code>查看工作区，就是干净的，可以创建bug分支修复，修复完成合并提交后，<code>git stash apply</code>(恢复)+<code>git stash drop</code>(删除)或<code>git stash pop</code>(恢复并删除)</li>
+</ul>
+
+<h3 id="section-8">标签管理</h3>
+
+<ul>
+  <li>应用场景：发布版本时，给所发布的版本加标签，以后可以方便的取出该版本</li>
+  <li>创建标签：<code>git tag &lt;name&gt; (commit_id) (-m "tag_msg)"</code>，不传commit_id时默认打到最近一次commit，-m参数可以传当前tag说明文字</li>
+  <li>推送标签到远程仓库：<code>git push origin &lt;tagname&gt;</code>(tagname)，<code>git push origin --tags</code>(全部tag)</li>
+  <li>删除本地标签：<code>git tag -d &lt;tagname&gt;</code></li>
+  <li>删除远程仓库标签：<code>git tag -d &lt;tagname&gt;</code>+<code>git push origin :refs/tags/&lt;tagname&gt;</code></li>
+  <li>切换到标签：<code>git checkout &lt;tagname&gt;</code></li>
+</ul>
+
+<h3 id="section-9">忽略特殊文件</h3>
+
+<ul>
+  <li><code>.gitignore</code>：window下可以通过命令新建该文件，将需要忽略的文件写入.gitignore即可，例如：<code>public/</code>忽略publick目录，<code>.gitignore</code>忽略.gitignore文件，<code>*.class</code>忽略所有class类型文件</li>
+</ul>
+
+<h3 id="git-documentationhttpsgit-scmcomdoc"><a href="https://git-scm.com/doc">Git Documentation</a></h3>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">上篇</span>
+       <h2 class="post-list__post-title post-title"><a href="/2016/11/saturday-morning/" title="link to 一个周六的早晨">一个周六的早晨</a></h2>
+       <p class="excerpt">还在学习怎么用github和jekyll做自己的网站。      Trophy theme. Can be used for image blogging.        A online CV theme.        Project Pages theme.        Jekyll tips.        planet Jekyll.        Static map maker.        google font library.also check katydecor...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2016-11-12 00:00:00 -0800" class="post-list__meta--date date">2016-11-12</time> &#8226; <span class="post-list__meta--tags tags"></span><a class="btn-border-small" href=/2016/11/saturday-morning/>阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://mkzg.com/2016/11/git-basic/";
+        this.page.identifier = "/2016/11/git-basic/";
+    };
+
+    var disqus_shortname = 'mkzg';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a>生成，感谢 <a href="https://github.com">Github</a> 为本站提供稳定的web hosting服务</span>
+        <span class="footer__copyright">本站由 <a href="http://mkzg.com">@olim</a> 创建。 - &copy; 2017</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>olim</title>
+    <description>olim (欧林木)，来自中国，现居温哥华，从事和房屋建筑设计与建造的相关工作。</description>
+    <link>http://mkzg.com/</link>
+    <atom:link href="http://mkzg.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 19 Jan 2017 03:26:48 -0800</pubDate>
+    <lastBuildDate>Thu, 19 Jan 2017 03:26:48 -0800</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Git 常用基本命令详解</title>
+        <description>&lt;p&gt;从网站上收集一些基本常用的git命令，作为参考。在加上一些用用链接，作为学习的资料。以便在有些网络资源链接失效后，至少我这里还有个可以检索的备份。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;配置&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;命令：
+&lt;code&gt;git config&lt;/code&gt;，参数–global表示你这台机器上所有的Git仓库都会使用这个配置
+    &lt;ol&gt;
+      &lt;li&gt;git config –global user.name “Your Name”&lt;/li&gt;
+      &lt;li&gt;git config –global user.email “email@example.com”&lt;/li&gt;
+      &lt;li&gt;git config –global alias.co checkout #设置别名，如checkout别名为co&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;版本库&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;初始化：
+&lt;code&gt;git init&lt;/code&gt;，分布式版本控制系统中每个人的电脑就是一个完整的版本库，初始化后，就意味着这个目录变成Git可以管理的仓库了&lt;/li&gt;
+  &lt;li&gt;远程仓库：如果你需要和其他人交换你的修改，最好需要一个远程仓库（以GitHub为例）
+    &lt;ul&gt;
+      &lt;li&gt;创建SSH Key：&lt;code&gt;ssh-keygen -t rsa -C &quot;youremail@example.com&quot;&lt;/code&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;操作：一路回车，会在用户主目录生成.ssh目录，其中id_rsa是私钥，不能泄露，id_rsa.pub是公钥，可以对外使用，打开Account settings，SSH Keys页面，然后，点Add SSH Key，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容，点Add Key
+说明：你的本地仓库需要一个给远程仓库辨识的标志，id_rsa.pub就是这样一个唯一标识，当你提交时，GitHub便知道了这是谁的提交&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;添加远程仓库：&lt;code&gt;git remote add origin git@github.com:daihanqiao/daihanqiao.github.io.git&lt;/code&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;说明：如果你先在本地有了一个仓库，你要同步本地仓库和GitHub上的远程仓库，除了需要将你本地仓库的标识告诉远程仓库，还需要在本地仓库添加远程仓库的SSH URL（注意将origin后的路径设置成你GitHub上的仓库SSH URL）&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;从远程仓库克隆：&lt;code&gt;git clone git@github.com:daihanqiao/daihanqiao.github.io.git&lt;/code&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;说明：如果已有一个远程仓库，你可以将远程仓库内容拷贝到本地仓库&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;状态查看&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;查看提交日志：&lt;code&gt;git log&lt;/code&gt;，可添加&lt;code&gt;--pretty=oneline&lt;/code&gt;参数，只显示版本号和提交信息&lt;/li&gt;
+  &lt;li&gt;查看命令历史：&lt;code&gt;git reflog&lt;/code&gt;，会显示操作命令及对应的版本号&lt;/li&gt;
+  &lt;li&gt;仓库当前的状态：&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;查看分支：&lt;code&gt;git branch&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;查看分支合并图：&lt;code&gt;git log --graph&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;查看“储藏”的工作现场：&lt;code&gt;git stash list&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;查看远程仓库名称：&lt;code&gt;git remote&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;查看远程仓库信息：&lt;code&gt;git remote -v&lt;/code&gt;(抓取和推送地址)&lt;/li&gt;
+  &lt;li&gt;查看标签信息：&lt;code&gt;git show &lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;文件比较&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;工作区和缓存区比较：&lt;code&gt;git diff (&amp;lt;path&amp;gt;)&lt;/code&gt;，不传path则比较所有文件&lt;/li&gt;
+  &lt;li&gt;缓存区和版本库比较：&lt;code&gt;git diff --cached (&amp;lt;path&amp;gt;)&lt;/code&gt;,&lt;code&gt;git diff --staged (&amp;lt;path&amp;gt;)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;工作区和版本库比较：&lt;code&gt;git diff HEAD,git diff HEAD^&lt;/code&gt;,&lt;code&gt;git diff commit_id&lt;/code&gt;(HEAD为当前版本，HEAD^为上一版本，HEAD^^上上一个版本，HEAD~100上100个版本，commit_id为版本号，以下命令不做特殊说明，commit_id均可用HEAD,HEAD^,HEAD~n代替)&lt;/li&gt;
+  &lt;li&gt;版本库中两个不同版本的比较：&lt;code&gt;git diff commit_id1 commit_id2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;文件提交&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;工作区提交到缓存区： &lt;code&gt;git add &amp;lt;path&amp;gt;&lt;/code&gt;，可以是文件也可以是目录，&lt;code&gt;git add .&lt;/code&gt;表示add当前目录&lt;/li&gt;
+  &lt;li&gt;缓存区提交到版本库：&lt;code&gt;git commit -m &quot;commit msg&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;版本库推送到远程库：&lt;code&gt;git push -u origin master&lt;/code&gt;，第一次push加上-u参数，将本地master分支内容推送到远程库新的master分支，并将二者关联，以后的推送可以简化为git push&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;文件抓取&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;文件修改&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;撤销缓存区的修改：&lt;code&gt;git reset HEAD file&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;工作区回退到某一版本：&lt;code&gt;git reset --hard commit_id&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;撤销工作区修改（未提交至缓存区）：&lt;code&gt;git checkout -- file&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;撤销工作区修改（已提交至缓存区）：&lt;code&gt;git reset HEAD file+git checkout -- file&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;文件从版本库删除：&lt;code&gt;git rm file|git add file+git commit -m &quot;commit msg&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;版本库误删的文件恢复到最新版本：&lt;code&gt;git checkout -- file&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;分支管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;应用场景：开发某个功能模块，或测试定位修复某个BUG时，可以在自己的分支上开发，正常提交至版本库而不影响大家都在使用的分支，开发完成后合并到开发分支&lt;/li&gt;
+  &lt;li&gt;创建并切换分支：&lt;code&gt;git checkout -b dev&lt;/code&gt;(相当于&lt;code&gt;git branch dev+git checkout dev&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;合并分支：&lt;code&gt;git merge dev&lt;/code&gt;，合并dev分支到当前分支&lt;/li&gt;
+  &lt;li&gt;删除分支：&lt;code&gt;git branch -d dev&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;两个分支都修改了同一文件，合并时会发生冲突，需要手动解决冲突后再提交&lt;/li&gt;
+  &lt;li&gt;“储藏”工作现场：&lt;code&gt;git stash&lt;/code&gt;，当正在dev分支修改文件时，需要紧急修复某个bug，可以“储藏”当前开发进度，使用后&lt;code&gt;git status&lt;/code&gt;查看工作区，就是干净的，可以创建bug分支修复，修复完成合并提交后，&lt;code&gt;git stash apply&lt;/code&gt;(恢复)+&lt;code&gt;git stash drop&lt;/code&gt;(删除)或&lt;code&gt;git stash pop&lt;/code&gt;(恢复并删除)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;标签管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;应用场景：发布版本时，给所发布的版本加标签，以后可以方便的取出该版本&lt;/li&gt;
+  &lt;li&gt;创建标签：&lt;code&gt;git tag &amp;lt;name&amp;gt; (commit_id) (-m &quot;tag_msg)&quot;&lt;/code&gt;，不传commit_id时默认打到最近一次commit，-m参数可以传当前tag说明文字&lt;/li&gt;
+  &lt;li&gt;推送标签到远程仓库：&lt;code&gt;git push origin &amp;lt;tagname&amp;gt;&lt;/code&gt;(tagname)，&lt;code&gt;git push origin --tags&lt;/code&gt;(全部tag)&lt;/li&gt;
+  &lt;li&gt;删除本地标签：&lt;code&gt;git tag -d &amp;lt;tagname&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;删除远程仓库标签：&lt;code&gt;git tag -d &amp;lt;tagname&amp;gt;&lt;/code&gt;+&lt;code&gt;git push origin :refs/tags/&amp;lt;tagname&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;切换到标签：&lt;code&gt;git checkout &amp;lt;tagname&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;忽略特殊文件&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;.gitignore&lt;/code&gt;：window下可以通过命令新建该文件，将需要忽略的文件写入.gitignore即可，例如：&lt;code&gt;public/&lt;/code&gt;忽略publick目录，&lt;code&gt;.gitignore&lt;/code&gt;忽略.gitignore文件，&lt;code&gt;*.class&lt;/code&gt;忽略所有class类型文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;git-documentationhttpsgit-scmcomdoc&quot;&gt;&lt;a href=&quot;https://git-scm.com/doc&quot;&gt;Git Documentation&lt;/a&gt;&lt;/h3&gt;
+</description>
+        <pubDate>Wed, 23 Nov 2016 00:00:00 -0800</pubDate>
+        <link>http://mkzg.com/2016/11/git-basic/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/11/git-basic/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>一个周六的早晨</title>
+        <description>&lt;p&gt;还在学习怎么用github和jekyll做自己的网站。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://yt3.ggpht.com/-0vxgKl3m7lM/AAAAAAAAAAI/AAAAAAAAAAA/Xv0t8IIjOo8/s900-c-k-no-mo-rj-c0xffffff/photo.jpg&quot; alt=&quot;一张图片&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://thomasvaeth.com/trophy/&quot;&gt;Trophy theme. Can be used for image blogging&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://webjeda.com/online-cv/&quot;&gt;A online CV theme&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://projectpages.github.io/project-pages/&quot;&gt;Project Pages theme&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://jekyll.tips&quot;&gt;Jekyll tips&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://planetjekyll.github.io&quot;&gt;planet Jekyll&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://staticmapmaker.com&quot;&gt;Static map maker&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://katydecorah.com/font-library/&quot;&gt;google font library&lt;/a&gt;.also check katydecorah.com site.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://jekyll-octopod.github.io&quot;&gt;Podcast extension for Jekyll&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://css-tricks.com/building-a-jekyll-site-part-1-of-3/&quot;&gt;building a Jekyll site&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://ines.io/blog/the-ultimate-guide-static-websites-jekyll/&quot;&gt;guide for Jekyll&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;拷贝以前的帖子在上面修改。不停测试如何正确使用markdownxu语法。既然这么多喜欢只有它的道理。在不断试错中学习掌握了再说吧。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 12 Nov 2016 00:00:00 -0800</pubDate>
+        <link>http://mkzg.com/2016/11/saturday-morning/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/11/saturday-morning/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>多年前想家的句子!</title>
+        <description>&lt;p&gt;身在异国他乡，难免会想起从小生活过的地方，特别是大部分的亲人还生活在那里，不是有人老早老早老早就说过嘛，每逢那个佳节啊，思念是成几何级数的增长。这思念吧属于内心的一种活动，有时候说出来，有时候不能说出来，为啥呢，因为你想说的时候可能对方正在睡觉呢，把对方叫醒救为了听你说几句话也太不人道了。当然想说的话不说也不能憋着，这不，你可以写出来嘛。一个夜深人静的夜晚，我爬在凌乱的电脑桌上，歪歪扭扭写下了下面几行句子。那张纸不知是不是扔掉了，看能不能找出来也贴在这里。&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;想家&lt;/h1&gt;
+
+&lt;p&gt;一个电话&lt;/p&gt;
+
+&lt;p&gt;这头是我&lt;/p&gt;
+
+&lt;p&gt;那头牵着她&lt;/p&gt;
+
+&lt;p&gt;叫一声妈&lt;/p&gt;
+
+&lt;p&gt;我是您的记挂&lt;/p&gt;
+
+&lt;p&gt;您也是我的牵挂&lt;/p&gt;
+
+&lt;p&gt;放下电话&lt;/p&gt;
+
+&lt;p&gt;思念在子夜&lt;/p&gt;
+
+&lt;p&gt;被深深触发&lt;/p&gt;
+
+&lt;p&gt;这里有我家&lt;/p&gt;
+
+&lt;p&gt;那里也是我的家&lt;/p&gt;
+
+&lt;p&gt;坐在家里&lt;/p&gt;
+
+&lt;p&gt;我&lt;/p&gt;
+
+&lt;p&gt;默默地想家&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2016-11-11.jpg&quot; alt=&quot;想家&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Nov 2016 00:00:00 -0800</pubDate>
+        <link>http://mkzg.com/2016/11/another-post-homesick/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/11/another-post-homesick/</guid>
+        
+        <category>随笔</category>
+        
+        
+        <category>生活,</category>
+        
+        <category>随笔</category>
+        
+      </item>
+    
+      <item>
+        <title>Some links!</title>
+        <description>&lt;p&gt;留着等几天来更新。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://thomasvaeth.com/trophy/&quot;&gt;Trophy theme. Can be used for image blogging&lt;/a&gt;.
+&lt;a href=&quot;http://webjeda.com/online-cv/&quot;&gt;A online CV theme&lt;/a&gt;.
+&lt;a href=&quot;http://projectpages.github.io/project-pages/&quot;&gt;Project Pages theme&lt;/a&gt;.
+&lt;a href=&quot;http://jekyll.tips&quot;&gt;Jekyll tips&lt;/a&gt;.
+&lt;a href=&quot;http://planetjekyll.github.io&quot;&gt;planet Jekyll&lt;/a&gt;.
+&lt;a href=&quot;http://staticmapmaker.com&quot;&gt;Static map maker&lt;/a&gt;.
+&lt;a href=&quot;http://katydecorah.com/font-library/&quot;&gt;google font library&lt;/a&gt;.also check katydecorah.com site.
+&lt;a href=&quot;https://jekyll-octopod.github.io&quot;&gt;Podcast extension for Jekyll&lt;/a&gt;.
+&lt;a href=&quot;https://css-tricks.com/building-a-jekyll-site-part-1-of-3/&quot;&gt;building a Jekyll site&lt;/a&gt;.
+&lt;a href=&quot;https://ines.io/blog/the-ultimate-guide-static-websites-jekyll/&quot;&gt;guide for Jekyll&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 06 Nov 2016 00:00:00 -0700</pubDate>
+        <link>http://mkzg.com/2016/11/some-links/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/11/some-links/</guid>
+        
+        <category>jekyll,</category>
+        
+        <category>github,</category>
+        
+        <category>git,</category>
+        
+        <category>网站</category>
+        
+        
+        <category>科技,</category>
+        
+        <category>学习</category>
+        
+      </item>
+    
+      <item>
+        <title>学一下markdown!</title>
+        <description>&lt;p&gt;Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。John Gruber 在 2004 年创造了 Markdown 语言，在语法上有很大一部分是跟 Aaron Swartz 共同合作的。这个语言的目的是希望大家使用“易于阅读、易于撰写的纯文字格式，并选择性的转换成有效的 XHTML (或是HTML)”。 其中最重要的设计是可读性，也就是说这个语言应该要能直接在字面上的被阅读，而不用被一些格式化指令标记 (像是 RTF 与 HTML)。 因此，它是现行电子邮件标记格式的惯例，虽然它也借镜了很多早期的标记语言，如：setext、Texile、reStructuredText。 许多网站都使用 Markdown 或是其变种，例如：GitHub、reddit、Diaspora、Stack Exchange、OpenStreetMap 与 SourceForge 让使用者更利于讨论。Markdown同时还是一个由Gruber编写的Perl脚本：Markdown.pl。它把用markdown语法编写的内容转换成有效的、结构良好的XHTML或HTML内容，并将左尖括号(‘&amp;lt;’)和&amp;amp;号替换成它们各自的字符实体引用。它可以用作单独的脚本，Blosxom和Movable Type的插件又或者BBEdit的文本过滤器. Markdown也已经被其他人用Perl和别的编程语言重新实现，其中一个Perl模块放在了CPAN上。它基于一个BSD风格的许可证分发并可以作为几个内容管理系统的插件。&lt;/p&gt;
+
+&lt;p&gt;以上是wikipedia上摘录的。我的理解就是一种简单的写作语言。人机可读性好，可转换成Html，PDF等通用格式，可让人专心于写作，被专业作家，写手等广泛使用。&lt;/p&gt;
+
+&lt;p&gt;下面是学习资料链接：&lt;/p&gt;
+
+&lt;h1 id=&quot;githubmarkdown-cheatsheethttpsgithubcomadam-pmarkdown-herewikimarkdown-cheatsheet&quot;&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;在github上的markdown cheatsheet&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&quot;githubmarkdown-cheatsheet-pdfhttpsguidesgithubcompdfsmarkdown-cheatsheet-onlinepdf&quot;&gt;&lt;a href=&quot;https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf&quot;&gt;在github上的markdown cheatsheet PDF文档&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&quot;markdownhttpsguidesgithubcomfeaturesmastering-markdown&quot;&gt;&lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot;&gt;掌握markdown&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;网上很多资源，搜索一下。关键要练习。各种格式在写作中用一下。无他，唯手熟尔。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 31 Oct 2016 00:00:00 -0700</pubDate>
+        <link>http://mkzg.com/2016/10/second-post-markdown/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/10/second-post-markdown/</guid>
+        
+        <category>markdown</category>
+        
+        
+        <category>科技,</category>
+        
+        <category>学习</category>
+        
+      </item>
+    
+      <item>
+        <title>用jekyll和github把网站建起来！</title>
+        <description>&lt;p&gt;先把这些天学习的用jekyll在github上搭建网站的步骤记录下来，留作参考。&lt;/p&gt;
+
+&lt;p&gt;#安装jekyll&lt;/p&gt;
+
+&lt;p&gt;确定系统安装 Git, Ruby, RubyGems, Nodejs, Python2.7. 如何安装，狗狗一搜就可以。mac上基本自带，注意update一下到最新版本。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem install jekyll bundler
+$ jekyll -v # 检查安装帮版本
+$ jekyll new my-awesome-site
+$ cd my-awesome-site
+$ jekyll serve
+# =&amp;gt; Now browse to http://localhost:4000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;通过jekyll serve -B启动服务，使用Rakefile创建文章，然后用自己喜欢的工具进行写作。&lt;/p&gt;
+
+&lt;p&gt;创作完成，通过jekyll build生成页面，本地localhost:4000查看文章。&lt;/p&gt;
+
+&lt;p&gt;#注册github账户&lt;/p&gt;
+
+&lt;p&gt;注意创建第一个仓库用 username.github.io 在用户名下再创建的仓库可类似于网站下的一个folder.&lt;/p&gt;
+
+&lt;h1 id=&quot;ssh-&quot;&gt;SSH 配置&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;在用户目录（比如：C:/User/www）新建 .ssh 文件夹，或者通过 mkdir .ssh 创建。
+cd .ssh，并执行 ssh-keygen -t rsa -C &quot;your_email@example.com&quot;。
+连续三次回车，可以不用输入内容。第一次是指写入的文件名，默认为 id_rsa，后两次为密码。
+将 .pub 后缀文件中的内容复制出来，登陆 GitHub，找到页顶的设置项，然后设置其中的 ssh 项，添加刚才复制的内容。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;github&quot;&gt;两种方式在github上搭建网站&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在本地建好网站，上传到github&lt;/li&gt;
+  &lt;li&gt;从github上clone一个到本地，修改完传回&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;1. 本地创建&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir my-site
+$ cd my-site
+$ git init # 初始建立本地git仓库
+$ git remote add origin git@github.com:username/username.github.io.git # 建立和远端仓库链接
+$ git pull # 最好先提取一下，不然可能会有问题
+$ echo &quot;hello world&quot; &amp;gt;&amp;gt; README.md # 创建第一个readme文件。或用其它方式在本地仓库创建网站内容。
+$ git add . # 把新增或改动加入缓冲
+$ git commit -m &quot;first commit&quot; # 提交到本地仓库
+$ git push -u origin master # 推送到远端， 这里是github网上仓库
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;2. 从远端克隆&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/username/username.github.com.git
+# 这个方法把远端仓库拷贝到本地，并建立一个username.github.com的目录。
+$ cd username.github.com
+# 在本地完成一些修改后创建新的网页或博客文章
+$ git add . # 把新增或改动加入缓冲
+$ git commit -m &quot;revision&quot; # 提交到本地仓库
+$ git push -u origin master # 推送到远端， 这里是github网上仓库
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;新手可以找个喜欢的网站fork一下，再克隆到本地，修改之后传回github. 如直接克隆别人的网站，一定要记得要重新设定远端，设成自己的github仓库。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;域名绑定&lt;/h1&gt;
+
+&lt;p&gt;github上设置很简单，记得分支选master. 也可以自己添加CNAME文件。(别人那里克隆来的，记得修改成自己的域名）。&lt;/p&gt;
+
+&lt;p&gt;二级域名在域名注册商那里修改A记录为：204.232.175.78 # 这可能会变，google找最新可用的IP地址&lt;/p&gt;
+
+&lt;p&gt;三级域名或子域名可用CNAME设置。 如 www 指向 username.github.io 或 username.github.io/another-rep&lt;/p&gt;
+
+&lt;h1 id=&quot;git&quot;&gt;一些git命令&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;git init // 当前项目 git 化  
+git add . // 当前目录加入 git 跟踪  
+git add filename // 当前文件 filename 参加 git 跟踪  
+git commit -m &quot;XXXX&quot; // 提交信息，交给 git 经管，提交到本地库  
+git remote add origin git@github.com:XXXX/YYYY.git // 与 GitHub 上项目链接 (ssh 方式)  
+git push -u origin master // 将本地库提交到 GitHub 上，另一种是 gh-pages  
+git rm -rf directory // 删除库中指定文件夹 directory 所有内容  
+git rm filename // 删除库中指定文件 filename 内容   
+git clone git＠github.com:XXXX/YYYY.git // 将 GitHub 上的项目下载下来 
+git pull // 把服务器上的 “拉” 下来，与本地的合并
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;githttprogerdudlergithubiogit-guideindexzhhtml&quot;&gt;&lt;a href=&quot;http://rogerdudler.github.io/git-guide/index.zh.html&quot;&gt;这里是git简明指南&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://byte.kde.org/~zrusin/git/git-cheat-sheet-large.png&quot; alt=&quot;git cheat sheet&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;jekyllhttpjekyllthemesorg&quot;&gt;&lt;a href=&quot;http://jekyllthemes.org&quot;&gt;这里是jekyll的一些模版&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&quot;jekyll-tipshttpjekylltips&quot;&gt;&lt;a href=&quot;http://jekyll.tips&quot;&gt;这里是jekyll tips网站&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/barryclark/jekyll-now&quot;&gt;Jekyll Now repository&lt;/a&gt; on GitHub.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Oct 2016 00:00:00 -0700</pubDate>
+        <link>http://mkzg.com/2016/10/Hello-World-first-post/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/10/Hello-World-first-post/</guid>
+        
+        <category>jekyll,</category>
+        
+        <category>github,</category>
+        
+        <category>git,</category>
+        
+        <category>网站</category>
+        
+        
+        <category>科技,</category>
+        
+        <category>学习</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello World - Vno</title>
+        <description>&lt;h4 id=&quot;whats-this&quot;&gt;What’s this&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/onevcat/vno-jekyll&quot;&gt;Vno Jekyll&lt;/a&gt; is a theme for &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;. It is a port of my Ghost theme &lt;a href=&quot;https://github.com/onevcat/vno&quot;&gt;vno&lt;/a&gt;, which is originally developed from &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Dale Anthony’s Uno&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;usage&quot;&gt;Usage&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;$ git clone https://github.com/onevcat/vno-jekyll.git your_site
+$ cd your_site
+$ bundler install
+$ bundler exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your site with &lt;code&gt;Vno Jekyll&lt;/code&gt; enabled should be accessible in http://127.0.0.1:4000.&lt;/p&gt;
+
+&lt;p&gt;For more information about Jekyll, please visit &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll’s site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;configuration&quot;&gt;Configuration&lt;/h4&gt;
+
+&lt;p&gt;All configuration could be done in &lt;code&gt;_config.yml&lt;/code&gt;. Remember you need to restart to serve the page when after changing the config file. Everything in the config file should be self-explanatory.&lt;/p&gt;
+
+&lt;h4 id=&quot;background-image-and-avatar&quot;&gt;Background image and avatar&lt;/h4&gt;
+
+&lt;p&gt;You could replace the background and avatar image in &lt;code&gt;assets/images&lt;/code&gt; folder to change them.&lt;/p&gt;
+
+&lt;h4 id=&quot;sites-using-vno&quot;&gt;Sites using Vno&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://onevcat.com&quot;&gt;My blog&lt;/a&gt; is using &lt;code&gt;Vno Jekyll&lt;/code&gt; as well, you could see how it works in real. There are some other sites using the same theme. You can find them below:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Site Name&lt;/th&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OneV’s Den&lt;/td&gt;
+      &lt;td&gt;http://onevcat.com&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you happen to be using this theme, welcome to &lt;a href=&quot;https://github.com/onevcat/vno-jekyll/pulls&quot;&gt;send me a pull request&lt;/a&gt; to add your site link here. :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;license&quot;&gt;License&lt;/h4&gt;
+
+&lt;p&gt;Great thanks to &lt;a href=&quot;https://github.com/daleanthony&quot;&gt;Dale Anthony&lt;/a&gt; and his &lt;a href=&quot;https://github.com/daleanthony/uno&quot;&gt;Uno&lt;/a&gt;. Vno Jekyll is based on Uno, and contains a lot of modification on page layout, animation, font and some more things I can not remember. Vno Jekyll is followed with Uno and be licensed as &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International&lt;/a&gt;. See the link for more information.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Feb 2016 22:32:24 -0800</pubDate>
+        <link>http://mkzg.com/2016/02/hello-world-vno/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/02/hello-world-vno/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Sample Post</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;def print_hi(name)
+  puts &amp;quot;Hi, #{name}&amp;quot;
+end
+print_hi(&amp;#39;Tom&amp;#39;)
+#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 14 Feb 2016 22:32:24 -0800</pubDate>
+        <link>http://mkzg.com/2016/02/sample-post/</link>
+        <guid isPermaLink="true">http://mkzg.com/2016/02/sample-post/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>2009年温哥华房地产</title>
+        <description>&lt;p&gt;温哥华今年2009年的房地产市场走势先抑后扬，经历去年年底的金融风暴的洗礼，年初的行情甚为清淡，买家可以在温哥华连绵的雨季从容挑选，不过好景不长，刚刚享受了顾客是上帝的感觉没几个月，温哥华的地产市场就迎来了火热的夏天，短短几个月的时间就大致回到了去年的高点位置，是不是回春的表现还有待专家们的观察分析，媒体上一片经济回暖的论调，但事实如何，还是一边走一边看来的实际，个人觉得道路是曲折的。
+不过温哥华建筑相关专业市场最近却是活跃起来，建筑商逐步启动去年停止的项目，有的公司慢慢也有了加班的现象，逐步招人的计划看来也是会在不远的将来实施，个人期待着公司进一步的加薪来应付未来的通货膨胀。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 26 Sep 2009 00:00:00 -0700</pubDate>
+        <link>http://mkzg.com/2009/09/vancouver-real-estate-market/</link>
+        <guid isPermaLink="true">http://mkzg.com/2009/09/vancouver-real-estate-market/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>我炒股票</title>
+        <description>&lt;p&gt;本人炒股也有8年的历史，从当初意气风发，誓当股坛追击手，憧憬资金账户如火箭般上升，到后来资金腿斩（比腰斩还要低),不得不做起了上市公司的长期小股东，期间随股潮浮沉经载，慢慢体会到股市如人生，什么样的人赚什么样的钱，原来早有定数，财不入急门，一份耕耘方有一分收获，谋事在人成事在天(中国股市的“天”，您懂的），尽了自己最大的努力，要做到处危不乱，处乱不惊，见势不妙，三十六计走为上，君子不立危墙之下（赚钱之心又让人铤而走险，呵呵）。虽然说来简单，但不在这多年的股市风雨中一路摇摇晃晃走来是不能真正切切地体会到其中的意味。&lt;/p&gt;
+
+&lt;p&gt;有过5元涨到19元懵然追入到30元以上抛出的初生牛犊不怕虎的威猛，有过当天追涨第二天涨停板卖出的敏捷，有过疯狂借钱的孤注一掷而血本无归，有过因为忘记交易密码而不得不持股几个月反而获得客观收益的可笑经历，有过刚刚卖掉略有盈余的股票后就被庄家大幅拉伸嘲弄，有过上涨时的贪婪和下跌时的恐惧，还有对绵绵无期的跌势的无助，股市如人生，在股市这个人生里面我还只是一个8岁的少年，前面的路很长很长。&lt;/p&gt;
+
+&lt;p&gt;路有坎坷，悠然前行。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 Jul 2007 00:00:00 -0700</pubDate>
+        <link>http://mkzg.com/2007/07/stock-trading/</link>
+        <guid isPermaLink="true">http://mkzg.com/2007/07/stock-trading/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

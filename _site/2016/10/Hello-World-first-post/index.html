@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>用jekyll和github把网站建起来！</title>
+  <meta name="description" content="先把这些天学习的用jekyll在github上搭建网站的步骤记录下来，留作参考。">
+  <meta name="author" content="archiwei">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="用jekyll和github把网站建起来！">
+  <meta name="twitter:description" content="先把这些天学习的用jekyll在github上搭建网站的步骤记录下来，留作参考。">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="用jekyll和github把网站建起来！">
+  <meta property="og:description" content="先把这些天学习的用jekyll在github上搭建网站的步骤记录下来，留作参考。">
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://mkzg.com/2016/10/Hello-World-first-post/">
+  <link rel="alternate" type="application/rss+xml" title="olim" href="http://mkzg.com/feed.xml">
+
+  <meta name="google-site-verification" content="" />
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 olim 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="olim logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for olim" class="blog-button">olim</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">有之为利 无之为用</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">olim (欧林木)，来自中国，现居温哥华，从事和房屋建筑设计与建造的相关工作。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        
+        <p class="panel-cover__description"><p><a href="http://liangdesign.com" target="_blank">聊以为生</a></p><p><a href="http://cn.archiz.com" target="_blank">赖以为生</a></p></p>
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="olim 欧林木平时写的一些东西" class="blog-button">随笔</a></li>
+                
+                  <li class="navigation__item"><a href="http://liangphoto.com" target="_blank" title="olim平时拍的一些东西">摄影</a></li>
+                
+                  <li class="navigation__item"><a href="http://project.mkzg.com" target="_blank" title="olim做过的一些东西">工程</a></li>
+                
+                  <li class="navigation__item"><a href="/contact/" target="_blank" title="olim的一些联系方式">联络</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+  <!-- Weibo -->
+  <li class="navigation__item">
+    <a href="http://weibo.com/olimw" title="@olimw 的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- facebook -->
+  <li class="navigation__item">
+    <a href="http://facebook.com/archiwei" title="@archiwei" target="_blank">
+      <i class='social fa fa-facebook'></i>
+      <span class="label">facebook</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="http://twitter.com/archwei" title="@archwei" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+  
+
+  
+  <!-- Google Plus -->
+  <li class="navigation__item">
+    <a href="https://plus.google.com/107716023262945317060" rel="author" title="Google+" target="_blank">
+      <i class='social fa fa-google-plus-square'></i>
+      <span class="label">Google Plus</span>
+    </a>
+  </li>
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:archiwei@gmail.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel-cover--overlay cover-red"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-10-30 00:00:00 -0700" itemprop="datePublished" class="post-meta__date date">2016-10-30</time> &#8226; <span class="post-meta__tags tags">jekyll,github,git,网站</span>
+    </div>
+    <h1 class="post-title">用jekyll和github把网站建起来！</h1>
+  </header>
+
+  <section class="post">
+    <p>先把这些天学习的用jekyll在github上搭建网站的步骤记录下来，留作参考。</p>
+
+<p>#安装jekyll</p>
+
+<p>确定系统安装 Git, Ruby, RubyGems, Nodejs, Python2.7. 如何安装，狗狗一搜就可以。mac上基本自带，注意update一下到最新版本。</p>
+
+<pre><code>$ gem install jekyll bundler
+$ jekyll -v # 检查安装帮版本
+$ jekyll new my-awesome-site
+$ cd my-awesome-site
+$ jekyll serve
+# =&gt; Now browse to http://localhost:4000
+</code></pre>
+
+<p>通过jekyll serve -B启动服务，使用Rakefile创建文章，然后用自己喜欢的工具进行写作。</p>
+
+<p>创作完成，通过jekyll build生成页面，本地localhost:4000查看文章。</p>
+
+<p>#注册github账户</p>
+
+<p>注意创建第一个仓库用 username.github.io 在用户名下再创建的仓库可类似于网站下的一个folder.</p>
+
+<h1 id="ssh-">SSH 配置</h1>
+
+<pre><code>在用户目录（比如：C:/User/www）新建 .ssh 文件夹，或者通过 mkdir .ssh 创建。
+cd .ssh，并执行 ssh-keygen -t rsa -C "your_email@example.com"。
+连续三次回车，可以不用输入内容。第一次是指写入的文件名，默认为 id_rsa，后两次为密码。
+将 .pub 后缀文件中的内容复制出来，登陆 GitHub，找到页顶的设置项，然后设置其中的 ssh 项，添加刚才复制的内容。
+</code></pre>
+
+<h1 id="github">两种方式在github上搭建网站</h1>
+
+<ul>
+  <li>在本地建好网站，上传到github</li>
+  <li>从github上clone一个到本地，修改完传回</li>
+</ul>
+
+<h1 id="section">1. 本地创建</h1>
+
+<pre><code>$ mkdir my-site
+$ cd my-site
+$ git init # 初始建立本地git仓库
+$ git remote add origin git@github.com:username/username.github.io.git # 建立和远端仓库链接
+$ git pull # 最好先提取一下，不然可能会有问题
+$ echo "hello world" &gt;&gt; README.md # 创建第一个readme文件。或用其它方式在本地仓库创建网站内容。
+$ git add . # 把新增或改动加入缓冲
+$ git commit -m "first commit" # 提交到本地仓库
+$ git push -u origin master # 推送到远端， 这里是github网上仓库
+</code></pre>
+
+<h1 id="section-1">2. 从远端克隆</h1>
+
+<pre><code>$ git clone https://github.com/username/username.github.com.git
+# 这个方法把远端仓库拷贝到本地，并建立一个username.github.com的目录。
+$ cd username.github.com
+# 在本地完成一些修改后创建新的网页或博客文章
+$ git add . # 把新增或改动加入缓冲
+$ git commit -m "revision" # 提交到本地仓库
+$ git push -u origin master # 推送到远端， 这里是github网上仓库
+</code></pre>
+
+<p>新手可以找个喜欢的网站fork一下，再克隆到本地，修改之后传回github. 如直接克隆别人的网站，一定要记得要重新设定远端，设成自己的github仓库。</p>
+
+<h1 id="section-2">域名绑定</h1>
+
+<p>github上设置很简单，记得分支选master. 也可以自己添加CNAME文件。(别人那里克隆来的，记得修改成自己的域名）。</p>
+
+<p>二级域名在域名注册商那里修改A记录为：204.232.175.78 # 这可能会变，google找最新可用的IP地址</p>
+
+<p>三级域名或子域名可用CNAME设置。 如 www 指向 username.github.io 或 username.github.io/another-rep</p>
+
+<h1 id="git">一些git命令</h1>
+
+<pre><code>git init // 当前项目 git 化  
+git add . // 当前目录加入 git 跟踪  
+git add filename // 当前文件 filename 参加 git 跟踪  
+git commit -m "XXXX" // 提交信息，交给 git 经管，提交到本地库  
+git remote add origin git@github.com:XXXX/YYYY.git // 与 GitHub 上项目链接 (ssh 方式)  
+git push -u origin master // 将本地库提交到 GitHub 上，另一种是 gh-pages  
+git rm -rf directory // 删除库中指定文件夹 directory 所有内容  
+git rm filename // 删除库中指定文件 filename 内容   
+git clone git＠github.com:XXXX/YYYY.git // 将 GitHub 上的项目下载下来 
+git pull // 把服务器上的 “拉” 下来，与本地的合并
+</code></pre>
+
+<h1 id="githttprogerdudlergithubiogit-guideindexzhhtml"><a href="http://rogerdudler.github.io/git-guide/index.zh.html">这里是git简明指南</a></h1>
+
+<p><img src="http://byte.kde.org/~zrusin/git/git-cheat-sheet-large.png" alt="git cheat sheet" /></p>
+
+<h1 id="jekyllhttpjekyllthemesorg"><a href="http://jekyllthemes.org">这里是jekyll的一些模版</a></h1>
+
+<h1 id="jekyll-tipshttpjekylltips"><a href="http://jekyll.tips">这里是jekyll tips网站</a></h1>
+
+<p><a href="https://github.com/barryclark/jekyll-now">Jekyll Now repository</a> on GitHub.</p>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">下篇</span>
+       <h2 class="post-list__post-title post-title"><a href="/2016/10/second-post-markdown/" title="link to 学一下markdown!">学一下markdown!</a></h2>
+       <p class="excerpt">Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。John Gruber 在 2004 年创造了 Markdown 语言，在语法上有很大一部分是跟 Aaron Swartz 共同合作的。这个语言的目的是希望大家使用“易于阅读、易于撰写的纯文字格式，并选择性的转换成有效的 XHTML (或是HTML)”。 ...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2016-10-31 00:00:00 -0700" class="post-list__meta--date date">2016-10-31</time> &#8226; <span class="post-list__meta--tags tags">markdown</span><a class="btn-border-small" href=/2016/10/second-post-markdown/>阅读</a></div>
+   </div>
+   
+
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">上篇</span>
+       <h2 class="post-list__post-title post-title"><a href="/2016/02/hello-world-vno/" title="link to Hello World - Vno">Hello World - Vno</a></h2>
+       <p class="excerpt">What’s thisVno Jekyll is a theme for Jekyll. It is a port of my Ghost theme vno, which is originally developed from Dale Anthony’s Uno.Usage$ git clone https://github.com/onevcat/vno-jekyll.git your_site$ cd your_site$ bundler install$ bundler exe...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2016-02-15 22:32:24 -0800" class="post-list__meta--date date">2016-02-15</time> &#8226; <span class="post-list__meta--tags tags"></span><a class="btn-border-small" href=/2016/02/hello-world-vno/>阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+    <div id="disqus_thread"></div>
+    <script>
+    
+    var disqus_config = function () {
+        this.page.url = "http://mkzg.com/2016/10/Hello-World-first-post/";
+        this.page.identifier = "/2016/10/Hello-World-first-post/";
+    };
+
+    var disqus_shortname = 'mkzg';
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
+    
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a>生成，感谢 <a href="https://github.com">Github</a> 为本站提供稳定的web hosting服务</span>
+        <span class="footer__copyright">本站由 <a href="http://mkzg.com">@olim</a> 创建。 - &copy; 2017</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
