@@ -26,5 +26,5 @@ title: 一个周六的早晨
 
 - [guide for Jekyll](https://ines.io/blog/the-ultimate-guide-static-websites-jekyll/).
 
-拷贝以前的帖子在上面修改。不停测试如何正确使用markdownxu语法。既然这么多喜欢只有它的道理。在不断试错中学习掌握了再说吧。
+拷贝以前的帖子在上面修改。不停测试如何正确使用markdownxu语法。既然这么多喜欢有它的道理。在不断试错中学习掌握了再说吧。
 

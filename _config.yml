@@ -2,7 +2,7 @@
 title: olim
 subtitle: 有之为利 无之为用
 welcome_message: <p><a href="http://liangdesign.com" target="_blank">自以为生</a></p><p><a href="http://cn.archiz.com" target="_blank">合作为生</a></p>
-description: olim (欧耶)，来自中国，现居温哥华，从事和房屋建筑设计与建造的相关工作。
+description: olim (欧耶)，来自中国，现居温哥华，从事与房屋建筑设计和建造相关的工作。
 creator: <a href="http://olim.ca">@olim</a>
 
 url: "http://olim.ca"
@@ -18,13 +18,13 @@ cover_color: red
 # The blog button should not be removed.
 blog_button:
     title: 随笔
-    description: olim 欧林木平时写的一些东西
+    description: olim (欧耶)平时写的一些东西
 
 # Navigation buttons in the front page.
 nav:
-    - {title: 摄影, description: olim平时拍的一些照片, url: 'http://liangphoto.com'}
-    - {title: 工程, description: olim做过的一些工程, url: 'http://project.olim.ca'}
-    - {title: 联络, description: olim的一些联系方式, url: '/contact/'}
+    - {title: 摄影, description: olim(欧耶)平时拍的一些照片, url: 'http://liangphoto.com'}
+    - {title: 工程, description: olim(欧耶)做过的一些工程, url: 'http://project.olim.ca'}
+    - {title: 联络, description: olim(欧耶)的一些联系方式, url: '/contact/'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
