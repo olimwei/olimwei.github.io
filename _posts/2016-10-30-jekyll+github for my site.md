@@ -6,9 +6,9 @@ tags: jekyll, github, git, 网站
 ---
 先把这些天学习的用jekyll在github上搭建网站的步骤记录下来，留作参考。
 
-#安装jekyll
+# 安装jekyll
 
-确定系统安装 Git, Ruby, RubyGems, Nodejs, Python2.7. 如何安装，狗狗一搜就可以。mac上基本自带，注意update一下到最新版本。
+确定系统安装 Git, Ruby, RubyGems, Nodejs, Python2.7. 如何安装，狗狗一搜就可以。mac上基本自带，注意update一下到最新版本。*注：注意苹果笔记本的OS系统里需要安装rbenv管理不同版本的ruby，并设置好系统使用哪个版本*
 
 ```
 $ gem install jekyll bundler
@@ -23,7 +23,7 @@ $ jekyll serve
 
 创作完成，通过jekyll build生成页面，本地localhost:4000查看文章。
 
-#注册github账户
+# 注册github账户
 
 注意创建第一个仓库用 username.github.io 在用户名下再创建的仓库可类似于网站下的一个folder. 
 
@@ -41,7 +41,7 @@ cd .ssh，并执行 ssh-keygen -t rsa -C "your_email@example.com"。
 - 在本地建好网站，上传到github
 - 从github上clone一个到本地，修改完传回
 
-# 1. 本地创建
+## 1. 本地创建
 
 ``` 
 $ mkdir my-site
@@ -55,7 +55,7 @@ $ git commit -m "first commit" # 提交到本地仓库
 $ git push -u origin master # 推送到远端， 这里是github网上仓库
 ```
 
-# 2. 从远端克隆
+## 2. 从远端克隆
 
 ``` 
 $ git clone https://github.com/username/username.github.com.git
@@ -92,13 +92,15 @@ git rm filename // 删除库中指定文件 filename 内容
 git clone git＠github.com:XXXX/YYYY.git // 将 GitHub 上的项目下载下来 
 git pull // 把服务器上的 “拉” 下来，与本地的合并
 ```
-
-# [这里是git简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+# 一些资源链接
+[这里是git简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 
 ![git cheat sheet](http://byte.kde.org/~zrusin/git/git-cheat-sheet-large.png)
 
-# [这里是jekyll的一些模版](http://jekyllthemes.org)
+[这里是jekyll的一些模版](http://jekyllthemes.org)
 
-# [这里是jekyll tips网站](http://jekyll.tips)
+[这里是jekyll tips网站](http://jekyll.tips)
 
 [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+
+更多资源当然是问谷歌。
