@@ -1,9 +1,9 @@
 # Basic
-title: olim
+title: 欧耶
 subtitle: 有之为利 无之为用
 welcome_message: <p><a href="http://cn.archiz.com" target="_blank">設計为生</a></p><p><a href="http://stock.olim.ca" target="_blank">投资为乐</a></p>
 description: 欧耶，来自中国，现居温哥华，从事与房屋建筑设计和建造相关工作，业余跟踪美股市场。
-creator: <a href="http://olim.ca">@olim</a>
+creator: <a href="http://olim.ca">@欧耶</a>
 
 url: "http://olim.ca"
 
@@ -17,14 +17,14 @@ cover_color: red
 
 # The blog button should not be removed.
 blog_button:
-    title: 随寫日記
+    title: 随写日记
     description: 欧耶(olim)平时写的一些东西
 
 # Navigation buttons in the front page.
 nav:
-    - {title: 業餘愛好, description: 欧耶(olim)平常的娛樂, url: 'http://olim.in'}
-    - {title: 完成項目, description: 欧耶(olim)做过的一些工程, url: 'http://project.olim.ca'}
-    - {title: 联络, description:  欧耶(olim)的一些联系方式, url: '/contact/'}
+    - {title: 业余爱好, description: 欧耶(olim)平常的娱乐, url: 'http://olim.in'}
+    - {title: 经手项目, description: 欧耶(olim)做过的一些工程, url: 'http://project.olim.ca'}
+    - {title: 联络方式, description:  欧耶(olim)的一些联系方式, url: '/contact/'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
