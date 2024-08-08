@@ -1,8 +1,8 @@
 # Basic
 title: 欧耶
 subtitle: 有之为利 无之为用
-welcome_message: <p><a href="http://cn.archiz.com" target="_blank">設計为生</a></p><p><a href="http://money.olim.ca" target="_blank">投资为乐</a></p>
-description: 欧耶，来自中国，现居温哥华，从事与房屋建筑设计和建造相关工作，业余跟踪美股投资市场。
+welcome_message: <p><a href="http://archiz.com" target="_blank">設計为生</a></p><p><a href="http://money.olim.ca" target="_blank">投资为乐</a></p>
+description: 欧耶，来自中国，现居温哥华，从事建筑设计和房屋建造相关工作，业余关注美股投资市场。
 creator: <a href="http://olim.ca">@欧耶</a>
 
 url: "http://olim.ca"
@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: 业余爱好, description: 欧耶(olim)平常的娱乐, url: 'http://olim.in'}
+    - {title: 业余爱好, description: 欧耶(olim)平常的娱乐, url: '/hobby/'}
     - {title: 经手项目, description: 欧耶(olim)做过的一些工程, url: 'http://project.olim.ca'}
     - {title: 联络方式, description:  欧耶(olim)的一些联系方式, url: '/contact/'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}

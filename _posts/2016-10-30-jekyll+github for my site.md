@@ -71,11 +71,11 @@ $ git push -u origin master # 推送到远端， 这里是github网上仓库
 
 # 域名绑定
 
-github上设置很简单，记得分支选master. 也可以自己添加CNAME文件。(别人那里克隆来的，记得修改成自己的域名）。
+github上设置很简单，记得分支选master. 也可以自己添加CNAME文件。(如果别人那里克隆来的模版，记得修改成自己的域名)。
 
 二级域名在域名注册商那里修改A记录为：204.232.175.78 # 这可能会变，google找最新可用的IP地址
 
-三级域名或子域名可用CNAME设置。 如 www 指向 username.github.io 或 username.github.io/another-rep
+三级域名或子域名可用CNAME设置。 如 www 指向 username.github.io 或 xyz 指向 username.github.io/another-rep
 
 
 # 一些git命令
